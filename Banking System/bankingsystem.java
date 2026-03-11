@@ -1,5 +1,5 @@
 import java.util.*;
-public class bankingsystem 
+public class BankingSystem
 {
     static class User 
     {
@@ -134,21 +134,32 @@ public class bankingsystem
             {
                 System.out.print("Enter amount to deposit: ");
                 int amount=sc.nextInt();
-                user.balance+=amount;
-                System.out.println("Deposited successfully. Balance: " + user.balance);
+                if(amount<=0)
+                {
+                    System.out.println("Invalid amount");
+                }
+                else
+                {
+                    user.balance+=amount;
+                    System.out.println("Deposit successful. Balance: "+user.balance);
+                }
             } 
             else if(opt==3) 
             {
                 System.out.print("Enter amount to withdraw: ");
                 int amount=sc.nextInt();
-                if (amount>user.balance) 
+                if(amount<=0)
+                {
+                    System.out.println("Invalid amount");
+                }
+                else if (amount>user.balance) 
                 {
                     System.out.println("Insufficient funds");
                 } 
                 else 
                 {
                     user.balance-=amount;
-                    System.out.println("Withdrawn successfully. Balance: " + user.balance);
+                    System.out.println("Withdrawal successfully. Balance: " + user.balance);
                 }
             } 
             else if(opt==4) 
