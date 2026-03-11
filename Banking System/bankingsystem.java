@@ -1,5 +1,5 @@
 import java.util.*;
-public class BankingSystem
+public class bankingsystem
 {
     static class User 
     {
@@ -174,3 +174,4 @@ public class BankingSystem
         }
     }
 }
+
